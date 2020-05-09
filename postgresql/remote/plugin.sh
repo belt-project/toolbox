@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export POSTGRESQL_SERVICE="postgresql@11-main.service"
+export POSTGRESQL_SERVICE="postgresql@12-main.service"
 
 _postgresql_abort() {
 	local msg="$1"
@@ -21,7 +21,7 @@ postgresql_install() {
 
 	apt update &>/dev/null || _postgresql_abort "apt update failed"
 
-	apt install --yes postgresql-11 &>/dev/null || _postgresql_abort "apt install failed"
+	apt install --yes postgresql-12 &>/dev/null || _postgresql_abort "apt install failed"
 }
 
 postgresql_psql_exec() {
